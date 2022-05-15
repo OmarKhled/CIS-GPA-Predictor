@@ -23,17 +23,20 @@ def after_request(response):
 @app.route("/api/ml", methods=["POST"])
 def run_ML():
     body = request.get_json()
+    data = eval(body["data"])
     print("body", body)
-    e1 = str(body.get('interactionLevel', '1'))
-    e2 = str(body.get('offlineDays', '1'))
-    e3 = str(body.get('academicLifeImportantance', '1'))
-    e4 = str(body.get('age', '0'))
-    e5 = str(body.get('year', '1'))
-    e6 = str(body.get('transportationTime', '0'))
-    e7 = str(body.get('school', '0'))
-    e8 = str(body.get('credits', '0'))
-    e9 = str(body.get('friends', '0'))
-    e10 = str(body.get('studentActivities', '0'))
+    e1 = str(data.get('interactionLevel', '1'))
+    e2 = str(data.get('offlineDays', '1'))
+    e3 = str(data.get('academicLifeImportantance', '1'))
+    e4 = str(data.get('age', '0'))
+    e5 = str(data.get('year', '1'))
+    e6 = str(data.get('transportationTime', '0'))
+    e7 = str(data.get('school', '0'))
+    e8 = str(data.get('credits', '0'))
+    e9 = str(data.get('friends', '0'))
+    e10 = str(data.get('studentActivities', '0'))
+
+    print(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10)
 
     if e4 == "0":
         age_list = [1,0,0]
